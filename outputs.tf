@@ -13,8 +13,8 @@ output "certificatesbucketfullaccess_role_arn" {
   description = "The ARN of the IAM role that allows full access to the certboto-docker certificates bucket in the DNS account."
 }
 
-output "certificatesbucketreadonlyaccess_role_arn" {
-  value       = aws_iam_role.certificatesbucketreadonlyaccess_role.arn
+output "certificatesbucketreadonly_role_arn" {
+  value       = aws_iam_role.certificatesbucketreadonly_role.arn
   description = "The ARN of the IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account."
 }
 
