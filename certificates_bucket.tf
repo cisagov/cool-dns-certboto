@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
-# Create the S3 bucket where the certboto-docker certificates will be
-# stored.
+# Provision the S3 bucket where the certboto-docker certificates will
+# be stored.
 # ------------------------------------------------------------------------------
 
 resource "aws_s3_bucket" "certificates" {
   bucket = var.certificates_bucket_name
   depends_on = [
-    # Until this policy attachment happens, we don't even have
-    # permission to create the bucket.
-    aws_iam_role_policy_attachment.createcertificatesbucket_policy_attachment,
+    # Until this policy attachment happens, we don't have permission
+    # to provision the bucket.
+    aws_iam_role_policy_attachment.provisioncertificatesbucket_policy_attachment,
   ]
   server_side_encryption_configuration {
     rule {

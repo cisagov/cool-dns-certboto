@@ -43,19 +43,19 @@ variable "certificatesbucketreadonly_role_name" {
   default     = "CertificatesBucketReadOnly"
 }
 
-variable "createcertificatesbucket_policy_description" {
-  description = "The description to associate with the IAM policy that allows creation of the S3 bucket where certboto-docker certificates are stored."
-  default     = "Allows creation of the S3 bucket where certboto-docker certificates are stored."
-}
-
-variable "createcertificatesbucket_policy_name" {
-  description = "The name to assign the IAM policy that allows creation of the S3 bucket where certboto-docker certificates are stored."
-  default     = "CreateCertificatesBucket"
-}
-
 variable "provisionaccount_role_name" {
   description = "The name of the IAM role that allows sufficient permissions to provision all AWS resources in the DNS account."
   default     = "ProvisionAccount"
+}
+
+variable "provisioncertificatesbucket_policy_description" {
+  description = "The description to associate with the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored."
+  default     = "Allows provisioning of the S3 bucket where certboto-docker certificates are stored."
+}
+
+variable "provisioncertificatesbucket_policy_name" {
+  description = "The name to assign the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored."
+  default     = "ProvisionCertificatesBucket"
 }
 
 variable "tags" {
