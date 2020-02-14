@@ -1,3 +1,4 @@
+*.tfvars
 __pycache__
 .python-version
 .terraform
