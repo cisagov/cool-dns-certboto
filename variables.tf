@@ -33,6 +33,16 @@ variable "certificatesbucketfullaccess_role_name" {
   default     = "CertificatesBucketFullAccess"
 }
 
+variable "certificatesbucketreadonlyaccess_role_description" {
+  description = "The description to associate with the IAM role (as well as the corresponding policy) that allows read-only access to the S3 bucket where certboto-docker certificates are stored."
+  default     = "Allows read-only access to the S3 bucket where certboto-docker certificates are stored."
+}
+
+variable "certificatesbucketreadonlyaccess_role_name" {
+  description = "The name to assign the IAM role (as well as the corresponding policy) that allows read-only access to the S3 bucket where certboto-docker certificates are stored."
+  default     = "CertificatesBucketReadOnlyAccess"
+}
+
 variable "tags" {
   type        = map(string)
   description = "Tags to apply to all AWS resources provisioned."
