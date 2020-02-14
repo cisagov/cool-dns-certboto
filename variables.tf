@@ -23,6 +23,16 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
+variable "certificatesbucketfullaccess_role_description" {
+  description = "The description to associate with the IAM role (as well as the corresponding policy) that allows full access to the S3 bucket where certboto-docker certificates are stored."
+  default     = "Allows full access to the S3 bucket where certboto-docker certificates are stored."
+}
+
+variable "certificatesbucketfullaccess_role_name" {
+  description = "The name to assign the IAM role (as well as the corresponding policy) that allows full access to the S3 bucket where certboto-docker certificates are stored."
+  default     = "CertificatesBucketFullAccess"
+}
+
 variable "tags" {
   type        = map(string)
   description = "Tags to apply to all AWS resources provisioned."
