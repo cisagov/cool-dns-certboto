@@ -5,6 +5,11 @@
 
 resource "aws_s3_bucket" "certificates" {
   bucket = var.certificates_bucket_name
+  depends_on = [
+    # Until this policy attachment happens, we don't even have
+    # permission to create the bucket.
+    aws_iam_role_policy_attachment.createcertificatesbucket_policy_attachment,
+  ]
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
