@@ -2,57 +2,36 @@
 
 [![GitHub Build Status](https://github.com/cisagov/cool-dns-certboto/workflows/build/badge.svg)](https://github.com/cisagov/cool-dns-certboto/actions)
 
-This is a generic skeleton project that can be used to quickly get a
-new [cisagov](https://github.com/cisagov) [Terraform
-module](https://www.terraform.io/docs/modules/index.html) GitHub
-repository started.  This skeleton project contains [licensing
-information](LICENSE), as well as [pre-commit
-hooks](https://pre-commit.com) and
-[GitHub Actions](https://github.com/features/actions) configurations
-appropriate for the major languages that we use.
-
-See [here](https://www.terraform.io/docs/modules/index.html) for more
-details on Terraform modules and the standard module structure.
-
-## Usage ##
-
-```hcl
-module "example" {
-  source = "github.com/cisagov/cool-dns-certboto"
-
-  aws_region            = "us-west-1"
-  aws_availability_zone = "b"
-  subnet_id             = "subnet-0123456789abcdef0"
-
-  tags = {
-    Key1 = "Value1"
-    Key2 = "Value2"
-  }
-}
-```
-
-## Examples ##
-
-* [Deploying into the default VPC](https://github.com/cisagov/cool-dns-certboto/tree/develop/examples/default_vpc)
+Terraform code to create some roles related to the creation of and
+access to a
+[cisagov/certboto-docker](https://github.com/cisagov/certboto-docker)
+bucket for SSL certificates in the COOL DNS account.
 
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
-| aws_region | The AWS region to deploy into (e.g. us-east-1) | string | | yes |
-| aws_availability_zone | The AWS availability zone to deploy into (e.g. a, b, c, etc.) | string | | yes |
-| subnet_id | The ID of the AWS subnet to deploy into (e.g. subnet-0123456789abcdef0) | string | | yes |
-| tags | Tags to apply to all AWS resources created | map(string) | `{}` | no |
+| aws_region | The AWS region where the non-global resources are to be provisioned (e.g. "us-east-1"). | string | `us-east-1` | no |
+| certificates_bucket_name | The name to use for the S3 bucket that will store the certboto-docker certificates. | string | | yes |
+| certificatesbucketfullaccess_role_description | The description to associate with the IAM role (as well as the corresponding policy) that allows full access to the S3 bucket where certboto-docker certificates are stored. | string | `Allows full access to the S3 bucket where certboto-docker certificates are stored.` | no |
+| certificatesbucketfullaccess_role_name | The name to assign the IAM role (as well as the corresponding policy) that allows full access the S3 bucket where certboto-docker certificates are stored. | string | `CertificatesBucketFullAccess` | no |
+| certificatesbucketreadonly_role_description | The description to associate with the IAM role (as well as the corresponding policy) that allows read-only access to the S3 bucket where certboto-docker certificates are stored. | string | `Allows read-only access to the S3 bucket where certboto-docker certificates are stored.` | no |
+| certificatesbucketreadonly_role_name | The name to assign the IAM role (as well as the corresponding policy) that allows read-only access the S3 bucket where certboto-docker certificates are stored. | string | `CertificatesBucketReadOnly` | no |
+| provisionaccount_role_name | The name of the IAM role that allows sufficient permissions to provision all AWS resources in the DNS account. | string | `ProvisionAccount` | no |
+| provisioncertificatesbucket_role_description | The description to associate with the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `Allows provisioning of the S3 bucket where certboto-docker certificates are stored.` | no |
+| provisioncertificatesbucket_role_name | The name to assign the IAM role (as well as the corresponding policy) that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `ProvisionCertificatesBucket` | no |
+| tags | Tags to apply to all AWS resources provisioned. | map(string) | `{}` | no |
+| users_account_id | The ID of the users account. | string | | yes |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
-| id | The EC2 instance ID |
-| arn | The EC2 instance ARN |
-| availability_zone | The AZ where the EC2 instance is deployed |
-| private_ip | The private IP of the EC2 instance |
-| subnet_id | The ID of the subnet where the EC2 instance is deployed |
+| certificates_bucket_arn | The ARN of the S3 bucket where certboto-docker certificates will be stored. |
+| certificates_bucket_id | The ID of the S3 bucket where certboto-docker certificates will be stored. |
+| certificatesbucketfullaccess_role_arn | The ARN of the IAM role that allows full access to the certboto-docker certificates bucket in the DNS account. |
+| certificatesbucketreadonly_role_arn | The ARN of the IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account. |
+| provisioncertificatesbucket_policy_arn | The ARN of the IAM policy that allows provisioning of the certboto-docker certificates bucket in the DNS account. |
 
 ## Contributing ##
 
