@@ -4,7 +4,7 @@
 # You must provide a value for each of these parameters.
 # ------------------------------------------------------------------------------
 
-variable "certificate_bucket_name" {
+variable "certificates_bucket_name" {
   description = "The name to use for the S3 bucket that will store the certboto-docker certificates."
 }
 

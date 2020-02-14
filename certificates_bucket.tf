@@ -4,7 +4,7 @@
 # ------------------------------------------------------------------------------
 
 resource "aws_s3_bucket" "certificates" {
-  bucket = var.certificate_bucket_name
+  bucket = var.certificates_bucket_name
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
