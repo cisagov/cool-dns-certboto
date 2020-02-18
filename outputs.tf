@@ -18,6 +18,11 @@ output "certificatesbucketreadonly_role_arn" {
   description = "The ARN of the IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account."
 }
 
+output "provisioncertificatereadroles_role_arn" {
+  value       = aws_iam_role.provisioncertificatereadroles_role.arn
+  description = "The ARN of the IAM role with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account."
+}
+
 output "provisioncertificatesbucket_policy_arn" {
   value       = aws_iam_policy.provisioncertificatesbucket_policy.arn
   description = "The ARN of the IAM policy that allows provisioning of the certboto-docker certificates bucket in the DNS account."
