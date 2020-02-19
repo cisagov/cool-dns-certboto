@@ -18,8 +18,10 @@ bucket for SSL certificates in the COOL DNS account.
 | certificatesbucketreadonly_role_description | The description to associate with the IAM role (as well as the corresponding policy) that allows read-only access to the S3 bucket where certboto-docker certificates are stored. | string | `Allows read-only access to the S3 bucket where certboto-docker certificates are stored.` | no |
 | certificatesbucketreadonly_role_name | The name to assign the IAM role (as well as the corresponding policy) that allows read-only access the S3 bucket where certboto-docker certificates are stored. | string | `CertificatesBucketReadOnly` | no |
 | provisionaccount_role_name | The name of the IAM role that allows sufficient permissions to provision all AWS resources in the DNS account. | string | `ProvisionAccount` | no |
-| provisioncertificatesbucket_role_description | The description to associate with the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `Allows provisioning of the S3 bucket where certboto-docker certificates are stored.` | no |
-| provisioncertificatesbucket_role_name | The name to assign the IAM role (as well as the corresponding policy) that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `ProvisionCertificatesBucket` | no |
+| provisioncertificatereadroles_role_description | The description to associate with the IAM role (as well as the corresponding policy) with the ability to create IAM roles that can read selected certificates in the certificates bucket in the DNS account. | string | `Allows provisioning of IAM roles that can read selected certificates in the certificates bucket in the DNS account.` | no |
+| provisioncertificatereadroles_role_name | The name to assign the IAM role (as well as the corresponding policy) with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account. | string | `ProvisionCertificateReadRoles` | no |
+| provisioncertificatesbucket_policy_description | The description to associate with the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `Allows provisioning of the S3 bucket where certboto-docker certificates are stored.` | no |
+| provisioncertificatesbucket_policy_name | The name to assign the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `ProvisionCertificatesBucket` | no |
 | tags | Tags to apply to all AWS resources provisioned. | map(string) | `{}` | no |
 | users_account_id | The ID of the users account. | string | | yes |
 
@@ -31,6 +33,7 @@ bucket for SSL certificates in the COOL DNS account.
 | certificates_bucket_id | The ID of the S3 bucket where certboto-docker certificates will be stored. |
 | certificatesbucketfullaccess_role_arn | The ARN of the IAM role that allows full access to the certboto-docker certificates bucket in the DNS account. |
 | certificatesbucketreadonly_role_arn | The ARN of the IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account. |
+| provisioncertificatereadroles_role_arn | The ARN of the IAM role with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account. |
 | provisioncertificatesbucket_policy_arn | The ARN of the IAM policy that allows provisioning of the certboto-docker certificates bucket in the DNS account. |
 
 ## Contributing ##

@@ -48,6 +48,16 @@ variable "provisionaccount_role_name" {
   default     = "ProvisionAccount"
 }
 
+variable "provisioncertificatereadroles_role_description" {
+  description = "The description to associate with the IAM role (as well as the corresponding policy) with the ability to create IAM roles that can read selected certificates in the certificates bucket in the DNS account."
+  default     = "Allows provisioning of IAM roles that can read selected certificates in the certificates bucket in the DNS account."
+}
+
+variable "provisioncertificatereadroles_role_name" {
+  description = "The name to assign the IAM role (as well as the corresponding policy) with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account."
+  default     = "ProvisionCertificateReadRoles"
+}
+
 variable "provisioncertificatesbucket_policy_description" {
   description = "The description to associate with the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored."
   default     = "Allows provisioning of the S3 bucket where certboto-docker certificates are stored."
