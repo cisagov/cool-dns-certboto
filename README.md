@@ -29,12 +29,11 @@ bucket for SSL certificates in the COOL DNS account.
 
 | Name | Description |
 |------|-------------|
-| certificates_bucket_arn | The ARN of the S3 bucket where certboto-docker certificates will be stored. |
-| certificates_bucket_id | The ID of the S3 bucket where certboto-docker certificates will be stored. |
-| certificatesbucketfullaccess_role_arn | The ARN of the IAM role that allows full access to the certboto-docker certificates bucket in the DNS account. |
-| certificatesbucketreadonly_role_arn | The ARN of the IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account. |
-| provisioncertificatereadroles_role_arn | The ARN of the IAM role with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account. |
-| provisioncertificatesbucket_policy_arn | The ARN of the IAM policy that allows provisioning of the certboto-docker certificates bucket in the DNS account. |
+| certificates_bucket | The S3 bucket where certboto-docker certificates will be stored. |
+| certificatesbucketfullaccess_role | The IAM role that allows full access to the certboto-docker certificates bucket in the DNS account. |
+| certificatesbucketreadonly_role | The IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account. |
+| provisioncertificatereadroles_role | The IAM role with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account. |
+| provisioncertificatesbucket_policy | The IAM policy that allows provisioning of the certboto-docker certificates bucket in the DNS account. |
 
 ## Contributing ##
 
