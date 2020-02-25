@@ -19,7 +19,8 @@ data "aws_iam_policy_document" "provisioncertificatereadroles_doc" {
       "iam:PutRolePolicy",
       "iam:TagRole",
       "iam:UpdateAssumeRolePolicy",
-      "iam:UpdateRole"
+      "iam:UpdateRole",
+      "iam:UpdateRoleDescription",
     ]
     resources = [
       "arn:aws:iam::${data.aws_caller_identity.dns.account_id}:role/CertificateReadOnly-*"
@@ -32,7 +33,7 @@ data "aws_iam_policy_document" "provisioncertificatereadroles_doc" {
       "iam:DeletePolicy",
       "iam:GetPolicy",
       "iam:GetPolicyVersion",
-      "iam:ListPolicyVersions"
+      "iam:ListPolicyVersions",
     ]
     resources = [
       "arn:aws:iam::${data.aws_caller_identity.dns.account_id}:policy/CertificateReadOnly-*"
