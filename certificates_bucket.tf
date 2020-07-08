@@ -4,6 +4,8 @@
 # ------------------------------------------------------------------------------
 
 resource "aws_s3_bucket" "certificates" {
+  provider = aws.dnsprovisionaccount
+
   bucket = var.certificates_bucket_name
   depends_on = [
     # Until this policy attachment happens, we don't have permission
@@ -23,6 +25,8 @@ resource "aws_s3_bucket" "certificates" {
 # This blocks ANY public access to the bucket or the objects it
 # contains, even if misconfigured to allow public access.
 resource "aws_s3_bucket_public_access_block" "certificates" {
+  provider = aws.dnsprovisionaccount
+
   bucket = aws_s3_bucket.certificates.id
 
   block_public_acls       = true

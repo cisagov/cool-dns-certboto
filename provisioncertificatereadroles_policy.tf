@@ -23,7 +23,7 @@ data "aws_iam_policy_document" "provisioncertificatereadroles_doc" {
       "iam:UpdateRoleDescription",
     ]
     resources = [
-      "arn:aws:iam::${data.aws_caller_identity.dns.account_id}:role/CertificateReadOnly-*"
+      "arn:aws:iam::${local.dns_account_id}:role/CertificateReadOnly-*"
     ]
   }
 
@@ -36,12 +36,14 @@ data "aws_iam_policy_document" "provisioncertificatereadroles_doc" {
       "iam:ListPolicyVersions",
     ]
     resources = [
-      "arn:aws:iam::${data.aws_caller_identity.dns.account_id}:policy/CertificateReadOnly-*"
+      "arn:aws:iam::${local.dns_account_id}:policy/CertificateReadOnly-*"
     ]
   }
 }
 
 resource "aws_iam_policy" "provisioncertificatereadroles_policy" {
+  provider = aws.dnsprovisionaccount
+
   description = var.provisioncertificatereadroles_role_description
   name        = var.provisioncertificatereadroles_role_name
   policy      = data.aws_iam_policy_document.provisioncertificatereadroles_doc.json

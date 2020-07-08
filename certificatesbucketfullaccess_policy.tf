@@ -26,6 +26,8 @@ data "aws_iam_policy_document" "certificatesbucketfullaccess_doc" {
 }
 
 resource "aws_iam_policy" "certificatesbucketfullaccess_policy" {
+  provider = aws.dnsprovisionaccount
+
   description = var.certificatesbucketfullaccess_role_description
   name        = var.certificatesbucketfullaccess_role_name
   policy      = data.aws_iam_policy_document.certificatesbucketfullaccess_doc.json
