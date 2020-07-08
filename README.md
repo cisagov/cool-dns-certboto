@@ -35,6 +35,11 @@ bucket for SSL certificates in the COOL DNS account.
 | provisioncertificatereadroles_role | The IAM role with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account. |
 | provisioncertificatesbucket_policy | The IAM policy that allows provisioning of the certboto-docker certificates bucket in the DNS account. |
 
+## Notes ##
+
+Running `pre-commit` requires running `terraform init` in every directory that
+contains Terraform code. In this repository, this is only the main directory.
+
 ## Contributing ##
 
 We welcome contributions!  Please see [here](CONTRIBUTING.md) for
