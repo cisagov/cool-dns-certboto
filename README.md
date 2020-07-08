@@ -48,7 +48,6 @@ bucket for SSL certificates in the COOL DNS account.
 | provisioncertificatesbucket_policy_description | The description to associate with the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `Allows provisioning of the S3 bucket where certboto-docker certificates are stored.` | no |
 | provisioncertificatesbucket_policy_name | The name to assign the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `ProvisionCertificatesBucket` | no |
 | tags | Tags to apply to all AWS resources provisioned. | map(string) | `{}` | no |
-| users_account_id | The ID of the users account. | string | | yes |
 
 ## Outputs ##
 

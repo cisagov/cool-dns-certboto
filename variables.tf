@@ -9,11 +9,6 @@ variable "certificates_bucket_name" {
   description = "The name to use for the S3 bucket that will store the certboto-docker certificates."
 }
 
-variable "users_account_id" {
-  type        = string
-  description = "The ID of the users account."
-}
-
 # ------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 #
