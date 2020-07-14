@@ -18,6 +18,8 @@ data "aws_iam_policy_document" "provisioncertificatesbucket_doc" {
 }
 
 resource "aws_iam_policy" "provisioncertificatesbucket_policy" {
+  provider = aws.dnsprovisionaccount
+
   description = var.provisioncertificatesbucket_policy_description
   name        = var.provisioncertificatesbucket_policy_name
   policy      = data.aws_iam_policy_document.provisioncertificatesbucket_doc.json

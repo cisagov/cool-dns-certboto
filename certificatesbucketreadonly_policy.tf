@@ -24,6 +24,8 @@ data "aws_iam_policy_document" "certificatesbucketreadonly_doc" {
 }
 
 resource "aws_iam_policy" "certificatesbucketreadonly_policy" {
+  provider = aws.dnsprovisionaccount
+
   description = var.certificatesbucketreadonly_role_description
   name        = var.certificatesbucketreadonly_role_name
   policy      = data.aws_iam_policy_document.certificatesbucketreadonly_doc.json

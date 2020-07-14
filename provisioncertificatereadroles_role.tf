@@ -5,6 +5,8 @@
 # ------------------------------------------------------------------------------
 
 resource "aws_iam_role" "provisioncertificatereadroles_role" {
+  provider = aws.dnsprovisionaccount
+
   assume_role_policy = data.aws_iam_policy_document.assume_role_doc.json
   description        = var.provisioncertificatereadroles_role_description
   name               = var.provisioncertificatereadroles_role_name
@@ -12,6 +14,8 @@ resource "aws_iam_role" "provisioncertificatereadroles_role" {
 }
 
 resource "aws_iam_role_policy_attachment" "provisioncertificatereadroles_policy_attachment" {
+  provider = aws.dnsprovisionaccount
+
   policy_arn = aws_iam_policy.provisioncertificatereadroles_policy.arn
   role       = aws_iam_role.provisioncertificatereadroles_role.name
 }

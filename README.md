@@ -7,6 +7,31 @@ access to a
 [cisagov/certboto-docker](https://github.com/cisagov/certboto-docker)
 bucket for SSL certificates in the COOL DNS account.
 
+## Pre-requisites ##
+
+- [Terraform](https://www.terraform.io/) installed on your system.
+- An accessible AWS S3 bucket to store Terraform state
+  specified in [backend.tf](backend.tf)).
+- An accessible AWS DynamoDB database to store the Terraform state lock
+  (specified in [backend.tf](backend.tf)).
+- Access to all of the Terraform remote states specified in
+  [remote_states.tf](remote_states.tf).
+
+## Requirements ##
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+
+## Providers ##
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+| aws.dnsprovisionaccount | n/a |
+| aws.organizationsreadonly | n/a |
+| terraform | n/a |
+
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
@@ -23,7 +48,6 @@ bucket for SSL certificates in the COOL DNS account.
 | provisioncertificatesbucket_policy_description | The description to associate with the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `Allows provisioning of the S3 bucket where certboto-docker certificates are stored.` | no |
 | provisioncertificatesbucket_policy_name | The name to assign the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | string | `ProvisionCertificatesBucket` | no |
 | tags | Tags to apply to all AWS resources provisioned. | map(string) | `{}` | no |
-| users_account_id | The ID of the users account. | string | | yes |
 
 ## Outputs ##
 
@@ -34,6 +58,11 @@ bucket for SSL certificates in the COOL DNS account.
 | certificatesbucketreadonly_role | The IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account. |
 | provisioncertificatereadroles_role | The IAM role with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account. |
 | provisioncertificatesbucket_policy | The IAM policy that allows provisioning of the certboto-docker certificates bucket in the DNS account. |
+
+## Notes ##
+
+Running `pre-commit` requires running `terraform init` in every directory that
+contains Terraform code. In this repository, this is only the main directory.
 
 ## Contributing ##
 
