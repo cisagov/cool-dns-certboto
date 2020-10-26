@@ -22,16 +22,16 @@ bucket for SSL certificates in the COOL DNS account.
 | Name | Version |
 |------|---------|
 | terraform | ~> 0.12.0 |
-| aws | ~> 2.0 |
+| aws | ~> 3.0 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 2.0 |
-| aws.dnsprovisionaccount | ~> 2.0 |
-| aws.organizationsreadonly | ~> 2.0 |
-| terraform | ~> 2.0 |
+| aws | ~> 3.0 |
+| aws.dnsprovisionaccount | ~> 3.0 |
+| aws.organizationsreadonly | ~> 3.0 |
+| terraform | n/a |
 
 ## Inputs ##
 
@@ -67,7 +67,7 @@ contains Terraform code. In this repository, this is only the main directory.
 
 ## Contributing ##
 
-We welcome contributions!  Please see [here](CONTRIBUTING.md) for
+We welcome contributions!  Please see [`CONTRIBUTING.md`](CONTRIBUTING.md) for
 details.
 
 ## License ##
