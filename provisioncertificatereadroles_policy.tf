@@ -16,6 +16,7 @@ data "aws_iam_policy_document" "provisioncertificatereadroles_doc" {
       "iam:GetRolePolicy",
       "iam:ListAttachedRolePolicies",
       "iam:ListInstanceProfilesForRole",
+      "iam:ListRolePolicies",
       "iam:PutRolePolicy",
       "iam:TagRole",
       "iam:UpdateAssumeRolePolicy",
