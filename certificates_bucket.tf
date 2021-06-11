@@ -19,7 +19,6 @@ resource "aws_s3_bucket" "certificates" {
       }
     }
   }
-  tags = var.tags
 }
 
 # This blocks ANY public access to the bucket or the objects it
