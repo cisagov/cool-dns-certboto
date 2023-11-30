@@ -17,20 +17,21 @@ bucket for SSL certificates in the COOL DNS account.
 - Access to all of the Terraform remote states specified in
   [remote_states.tf](remote_states.tf).
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements ##
 
 | Name | Version |
 |------|---------|
 | terraform | ~> 1.0 |
-| aws | ~> 3.38 |
+| aws | ~> 4.9 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.38 |
-| aws.dnsprovisionaccount | ~> 3.38 |
-| aws.organizationsreadonly | ~> 3.38 |
+| aws | ~> 4.9 |
+| aws.dnsprovisionaccount | ~> 4.9 |
+| aws.organizationsreadonly | ~> 4.9 |
 | terraform | n/a |
 
 ## Modules ##
@@ -90,6 +91,7 @@ No modules.
 | certificatesbucketreadonly\_role | The IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account. |
 | provisioncertificatereadroles\_role | The IAM role with the ability to provision IAM roles that can read selected certificates in the certificates bucket in the DNS account. |
 | provisioncertificatesbucket\_policy | The IAM policy that allows provisioning of the certboto-docker certificates bucket in the DNS account. |
+<!-- END_TF_DOCS -->
 
 ## Notes ##
 
