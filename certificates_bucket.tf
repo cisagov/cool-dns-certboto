@@ -12,11 +12,17 @@ resource "aws_s3_bucket" "certificates" {
   ]
 
   bucket = var.certificates_bucket_name
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
+}
+
+# Ensure the S3 bucket is encrypted
+resource "aws_s3_bucket_server_side_encryption_configuration" "certificates" {
+  provider = aws.dnsprovisionaccount
+
+  bucket = aws_s3_bucket.certificates.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
     }
   }
 }

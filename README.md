@@ -55,6 +55,7 @@ No modules.
 | [aws_iam_role_policy_attachment.provisioncertificatesbucket_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_s3_bucket.certificates](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_public_access_block.certificates](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
+| [aws_s3_bucket_server_side_encryption_configuration.certificates](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_server_side_encryption_configuration) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [aws_iam_policy_document.assume_role_doc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_iam_policy_document.certificatesbucketfullaccess_doc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
@@ -81,6 +82,7 @@ No modules.
 | provisioncertificatesbucket\_policy\_description | The description to associate with the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | `string` | `"Allows provisioning of the S3 bucket where certboto-docker certificates are stored."` | no |
 | provisioncertificatesbucket\_policy\_name | The name to assign the IAM policy that allows provisioning of the S3 bucket where certboto-docker certificates are stored. | `string` | `"ProvisionCertificatesBucket"` | no |
 | tags | Tags to apply to all AWS resources created. | `map(string)` | `{}` | no |
+| terraform\_state\_bucket | The name of the S3 bucket where Terraform state is stored. | `string` | n/a | yes |
 
 ## Outputs ##
 

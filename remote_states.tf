@@ -8,28 +8,28 @@ data "terraform_remote_state" "dns" {
   backend = "s3"
 
   config = {
-    encrypt        = true
-    bucket         = "cisa-cool-terraform-state"
+    bucket         = var.terraform_state_bucket
     dynamodb_table = "terraform-state-lock"
+    encrypt        = true
+    key            = "cool-accounts/dns.tfstate"
     profile        = "cool-terraform-backend"
     region         = "us-east-1"
-    key            = "cool-accounts/dns.tfstate"
   }
 
-  workspace = "production"
+  workspace = terraform.workspace
 }
 
 data "terraform_remote_state" "master" {
   backend = "s3"
 
   config = {
-    encrypt        = true
-    bucket         = "cisa-cool-terraform-state"
+    bucket         = var.terraform_state_bucket
     dynamodb_table = "terraform-state-lock"
+    encrypt        = true
+    key            = "cool-accounts/master.tfstate"
     profile        = "cool-terraform-backend"
     region         = "us-east-1"
-    key            = "cool-accounts/master.tfstate"
   }
 
-  workspace = "production"
+  workspace = terraform.workspace
 }
