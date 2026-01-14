@@ -1,6 +1,8 @@
 # cool-dns-certboto #
 
 [![GitHub Build Status](https://github.com/cisagov/cool-dns-certboto/workflows/build/badge.svg)](https://github.com/cisagov/cool-dns-certboto/actions)
+[![License](https://img.shields.io/github/license/cisagov/cool-dns-certboto)](https://spdx.org/licenses/)
+[![CodeQL](https://github.com/cisagov/cool-dns-certboto/workflows/CodeQL/badge.svg)](https://github.com/cisagov/cool-dns-certboto/actions/workflows/codeql-analysis.yml)
 
 Terraform code to create some roles related to the creation of and
 access to a
