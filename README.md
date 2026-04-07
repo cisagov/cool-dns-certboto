@@ -23,14 +23,14 @@ bucket for SSL certificates in the COOL DNS account.
 ## Requirements ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | terraform | ~> 1.1 |
 | aws | ~> 6.7 |
 
 ## Providers ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | aws | ~> 6.7 |
 | aws.dnsprovisionaccount | ~> 6.7 |
 | aws.organizationsreadonly | ~> 6.7 |
@@ -43,7 +43,7 @@ No modules.
 ## Resources ##
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_iam_policy.certificatesbucketfullaccess_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy.certificatesbucketreadonly_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy.provisioncertificatereadroles_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
@@ -71,7 +71,7 @@ No modules.
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | aws\_region | The AWS region where the non-global resources are to be provisioned (e.g. "us-east-1"). | `string` | `"us-east-1"` | no |
 | certificates\_bucket\_name | The name to use for the S3 bucket that will store the certboto-docker certificates. | `string` | n/a | yes |
 | certificatesbucketfullaccess\_role\_description | The description to associate with the IAM role (as well as the corresponding policy) that allows full access to the S3 bucket where certboto-docker certificates are stored. | `string` | `"Allows full access to the S3 bucket where certboto-docker certificates are stored."` | no |
@@ -89,7 +89,7 @@ No modules.
 ## Outputs ##
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | certificates\_bucket | The S3 bucket where certboto-docker certificates will be stored. |
 | certificatesbucketfullaccess\_role | The IAM role that allows full access to the certboto-docker certificates bucket in the DNS account. |
 | certificatesbucketreadonly\_role | The IAM role that allows read-only access to the certboto-docker certificates bucket in the DNS account. |
